@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/nav_home"
+    android:title="Home"
+    android:icon="@drawable/home_logo"/>
+    <item
+        android:id="@+id/nav_glist"
+        android:title="GroceryList"
+        android:icon="@drawable/baseline_format_list_bulleted_24"/>
+    <item
+        android:id="@+id/nav_mlist"
+        android:title="Meal planner"
+        android:icon="@drawable/meal_plan2"/>
+    <item
+        android:id="@+id/nav_profile"
+        android:title="profile"
+        android:icon="@drawable/baseline_person_24"/>
+
+</menu>
