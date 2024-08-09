@@ -4,6 +4,7 @@
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="com.example.MyAppComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/app_logo"
@@ -11,6 +12,7 @@
         android:roundIcon="@drawable/app_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Eat_easy"
+        tools:replace="android:appComponentFactory"
         tools:targetApi="31">
         <activity
             android:name=".home_page"
@@ -26,7 +28,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

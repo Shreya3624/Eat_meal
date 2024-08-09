@@ -10,8 +10,11 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="#FFBE30"
         tools:ignore="Orientation" />
+
     <FrameLayout
         android:id="@+id/fview"
         android:layout_width="match_parent"
@@ -19,13 +22,13 @@
         android:layout_marginBottom="?attr/actionBarSize"
         android:layout_height="match_parent"/>
     <com.google.android.material.bottomnavigation.BottomNavigationView
-       android:id="@+id/bview"
+        android:id="@+id/bview"
         android:background="#FFBE30"
         android:layout_width="match_parent"
         app:itemIconTint="@color/black"
         app:menu="@menu/nav_item"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content"/>
+        android:layout_height="65dp"/>
 
 
 </RelativeLayout>

@@ -7,11 +7,11 @@
     <item
         android:id="@+id/nav_glist"
         android:title="GroceryList"
-        android:icon="@drawable/baseline_format_list_bulleted_24"/>
+        android:icon="@drawable/baseline_add_shopping_cart_24"/>
     <item
         android:id="@+id/nav_mlist"
         android:title="Meal planner"
-        android:icon="@drawable/meal_plan2"/>
+        android:icon="@drawable/meal_plan2" />
     <item
         android:id="@+id/nav_profile"
         android:title="profile"
