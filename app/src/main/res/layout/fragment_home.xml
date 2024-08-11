@@ -46,7 +46,7 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/btn_1"
+                        android:id="@+id/btn_inidan"
                         android:layout_width="148dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="10dp"
@@ -90,7 +90,7 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/btn_2"
+                        android:id="@+id/btn_italian"
                         android:layout_width="148dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="10dp"
@@ -137,7 +137,7 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/btn_3"
+                        android:id="@+id/btn_maxican"
                         android:layout_width="148dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="10dp"

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fcf3cf "
-    tools:context=".signup_page">
+    android:background="#fcf3cf"
+    tools:context=".sign_up">
 
 
     <ImageView
@@ -27,7 +27,7 @@
         android:background="@drawable/file"
         android:drawableLeft="@drawable/baseline_person_24"
         android:drawablePadding="20dp"
-        android:hint="Full name"
+        android:hint="User name"
         android:padding="10dp"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -39,13 +39,13 @@
         app:layout_constraintVertical_bias="0.466" />
 
     <EditText
-        android:id="@+id/txt_mob"
+        android:id="@+id/txt_mail"
         android:layout_width="355dp"
         android:layout_height="54dp"
         android:background="@drawable/file"
-        android:drawableLeft="@drawable/baseline_call_24"
+        android:drawableLeft="@drawable/baseline_email_24"
         android:drawablePadding="20dp"
-        android:hint="Contact no."
+        android:hint="Email Address"
         android:padding="10dp"
         android:textSize="20dp"
         android:textStyle="bold"
