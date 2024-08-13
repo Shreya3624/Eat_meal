@@ -28,7 +28,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="50dp"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/paneer"/>
+                    android:src="@drawable/paneer_makhani"/>
 
                 <TextView
                     android:id="@+id/desc_text"
