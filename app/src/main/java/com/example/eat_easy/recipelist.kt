@@ -30,12 +30,12 @@ class recipelist : AppCompatActivity() {
 
     private fun maxican() {
         items = listOf(
-            recipe_list_model(R.drawable.paneer, " aryan Masala "),
-            recipe_list_model(R.drawable.chole, "shreya"),
-            recipe_list_model(R.drawable.bhindi, "ankoit Bhindi"),
-            recipe_list_model(R.drawable.biryani, "manoj. Biryani"),
-            recipe_list_model(R.drawable.jeera_aloo, "Jeera Aloo"),
-            recipe_list_model(R.drawable.dal, "Dal vishal"),
+            recipe_list_model(R.drawable.paneer, " aryan Masala ",""),
+            recipe_list_model(R.drawable.chole, "shreya",""),
+            recipe_list_model(R.drawable.bhindi, "ankoit Bhindi",""),
+            recipe_list_model(R.drawable.biryani, "manoj. Biryani",""),
+            recipe_list_model(R.drawable.jeera_aloo, "Jeera Aloo",""),
+            recipe_list_model(R.drawable.dal, "Dal vishal",""),
         )
 
 
@@ -43,23 +43,23 @@ class recipelist : AppCompatActivity() {
 
     private fun indian(){
         items = listOf(
-            recipe_list_model(R.drawable.paneer, " Paneer Masala "),
-            recipe_list_model(R.drawable.chole, "Chole"),
-            recipe_list_model(R.drawable.bhindi, "Masala Bhindi"),
-            recipe_list_model(R.drawable.biryani, "Veg. Biryani"),
-            recipe_list_model(R.drawable.jeera_aloo, "Jeera Aloo"),
-            recipe_list_model(R.drawable.dal, "Dal Tadka"),
+            recipe_list_model(R.drawable.paneer, " Paneer Masala ",""),
+            recipe_list_model(R.drawable.chole, "Chole",""),
+            recipe_list_model(R.drawable.bhindi, "Masala Bhindi",""),
+            recipe_list_model(R.drawable.biryani, "Veg. Biryani",""),
+            recipe_list_model(R.drawable.jeera_aloo, "Jeera Aloo",""),
+            recipe_list_model(R.drawable.dal, "Dal Tadka",""),
         )
     }
 
     private fun italian() {
         items = listOf(
-            recipe_list_model(R.drawable.paneer, " riya Masala "),
-            recipe_list_model(R.drawable.chole, "snhea"),
-            recipe_list_model(R.drawable.bhindi, "preeti Bhindi"),
-            recipe_list_model(R.drawable.biryani, "puspa. Biryani"),
-            recipe_list_model(R.drawable.jeera_aloo, "Jeera Aloo"),
-            recipe_list_model(R.drawable.dal, "Dal Tadka"),
+            recipe_list_model(R.drawable.paneer, " riya Masala ",""),
+            recipe_list_model(R.drawable.chole, "snhea",""),
+            recipe_list_model(R.drawable.bhindi, "preeti Bhindi",""),
+            recipe_list_model(R.drawable.biryani, "puspa. Biryani",""),
+            recipe_list_model(R.drawable.jeera_aloo, "Jeera Aloo",""),
+            recipe_list_model(R.drawable.dal, "Dal Tadka",""),
         )
 
     }
