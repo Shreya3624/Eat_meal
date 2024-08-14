@@ -3,7 +3,6 @@ package com.example.eat_easy
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,11 +25,10 @@ class FullView : AppCompatActivity() {
         val Image: CircleImageView =findViewById(R.id.viewimg)
         val name:TextView=findViewById(R.id.viewname)
         val desc:TextView=findViewById(R.id.viewdesc)
-        val intent:Intent
-        intent=getIntent()
-        val rimage:Int=getIntent().getIntExtra("ReceipeImg",0)
-        val rname:String= getIntent().getStringExtra("ReceipeName").toString()
-        val rdesc:String= getIntent().getStringExtra("ReceipeName").toString()
+        val intent:Intent = intent
+        val rimage:Int=intent.getIntExtra("ReceipeImg",0)
+        val rname:String= intent.getStringExtra("ReceipeName").toString()
+        val rdesc:String= intent.getStringExtra("ReceipeName").toString()
         Image.setImageResource(rimage)
         name.text=rname
         desc.text=rdesc
