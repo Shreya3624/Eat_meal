@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
+import android.widget.PopupWindow
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 
@@ -34,7 +36,6 @@ class desc_adapter(private val context: Context, private val items:List<recipe_l
         val rdesc:String=item.titledesc
         imageView.setImageResource(rimage)
         textView.text = rname
-        //detailed receipe
         adcradview.setOnClickListener {
 
             val intent=Intent(context,FullView::class.java)

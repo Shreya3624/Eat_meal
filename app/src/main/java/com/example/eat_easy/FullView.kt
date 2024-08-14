@@ -9,6 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import de.hdodenhof.circleimageview.CircleImageView
 
 class FullView : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -22,7 +23,7 @@ class FullView : AppCompatActivity() {
             insets
 
         }
-        val Image:ImageView=findViewById(R.id.viewimg)
+        val Image: CircleImageView =findViewById(R.id.viewimg)
         val name:TextView=findViewById(R.id.viewname)
         val desc:TextView=findViewById(R.id.viewdesc)
         val intent:Intent
