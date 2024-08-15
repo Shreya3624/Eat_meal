@@ -2,4 +2,171 @@
     <string name="app_name">eat_easy</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="f1">
+                - This is the first bullet point &#10;
+                - This is the second bullet point &#10;
+                - This is the third bullet point &#10;
+    </string>
+    <string name="f2">
+               Ingredients:-\n
+      \n
+200g Paneer (cut into cubes)\n
+2 tbsp Butter\n
+1 tbsp Oil\n
+1 Bay Leaf\n
+2-3 Cloves\n
+1-inch Cinnamon Stick\n
+2-3 Cardamom Pods\n
+1 Large Onion (finely chopped)\n
+2-3 Tomatoes (pureed)\n
+1 tsp Ginger-Garlic Paste\n
+1 tsp Red Chili Powder\n
+1/2 tsp Turmeric Powder\n
+1 tsp Coriander Powder\n
+1/2 tsp Garam Masala\n
+1/4 cup Fresh Cream\n
+Salt to taste\n
+1 tbsp Kasuri Methi (dried fenugreek leaves, crushed)\n
+Coriander Leaves for garnish\n
+1 tsp Sugar (optional)\n
+      \n
+Instructions:-\n
+      \n
+Heat butter and oil in a pan. Add bay leaf, cloves, cinnamon, and cardamom.Sauté until fragrant.\n
+Add chopped onions and cook until golden brown.\n
+Add ginger-garlic paste and sauté for 1-2 minutes.\n
+Stir in tomato puree and cook until the oil separates from the masala.\n
+Add red chili powder, turmeric powder, coriander powder, and salt. \n
+Cook for a few minutes until the spices are well combined.\n
+Add paneer cubes and mix gently to coat them with the masala.\n
+Add fresh cream and sugar (optional). Stir well to combine.\n
+Sprinkle garam masala and kasuri methi. \n
+Mix well and cook for another 2-3 minutes.\n
+Garnish with coriander leaves and serve hot with naan, roti, or rice.\n
+        \n
+Enjoy your delicious Paneer Butter Masala!\n
+    </string>
+    <string name="f3">
+
+        Ingredients:-\n
+  - 2 cups chickpeas (soaked overnight and cooked)\n
+  - 2 tbsp oil\n
+  - 1 large onion (finely chopped)\n
+  - 2 tomatoes (pureed)\n
+  - 1 tbsp ginger-garlic paste\n
+  - 1 green chili (finely chopped, optional)\n
+  - 1 tsp cumin seeds\n
+  - 1 tsp turmeric powder\n
+  - 1 tsp coriander powder\n
+  - 1 tsp garam masala\n
+  - 1 tsp chili powder (adjust to taste)\n
+  - 1 tsp amchur (dried mango powder) or lemon juice\n
+  - Salt to taste\n
+  - Fresh cilantro for garnish\n
+
+    Instructions:-\n
+  - Heat oil in a pan, add cumin seeds, and let them sizzle.\n
+  - Add chopped onions and sauté until golden brown.\n
+  - Stir in ginger-garlic paste and green chili, cook for a minute.\n
+  - Add tomato puree and cook until the oil separates from the mixture.\n
+  - Mix in turmeric, coriander powder, garam masala, and chili powder. Cook for a few minutes.\n
+  - Add cooked chickpeas and some of the chickpea cooking liquid (or water) to the pan. Simmer for 10-15 minutes.\n
+  - Stir in amchur or lemon juice, and adjust salt.\n
+  - Garnish with fresh cilantro before serving.\n
+
+     Enjoy your Chole with rice or bread!
+    </string>
+    <string name="f4">
+
+     Ingredients:- \n
+  - 250g bhindi (okra), sliced\n
+  - 2 tbsp oil\n
+  - 1 tsp cumin seeds\n
+  - 1 large onion, finely chopped\n
+  - 1 tomato, chopped\n
+  - 1 tsp ginger-garlic paste\n
+  - 1 green chili, finely chopped (optional)\n
+  - 1 tsp turmeric powder\n
+  - 1 tsp coriander powder\n
+  - 1 tsp cumin powder\n
+  - 1/2 tsp red chili powder\n
+  - 1/2 tsp garam masala\n
+  - Salt to taste\n
+  - Fresh cilantro for garnish\n
+
+     Instructions:- \n
+  - Heat oil in a pan, add cumin seeds, and let them sizzle.\n
+  - Add onions and sauté until golden brown.\n
+  - Stir in ginger-garlic paste and green chili, cook for a minute.\n
+  - Add chopped tomatoes and cook until they soften.\n
+  - Mix in turmeric, coriander powder, cumin powder, red chili powder, and salt. Cook for a few minutes.\n
+  - Add sliced bhindi and cook on medium heat, stirring occasionally, until bhindi is tender and lightly browned.\n
+  - Sprinkle garam masala and mix well.\n
+  - Garnish with fresh cilantro before serving.\n
+
+    Enjoy your masala bhindi!
+    </string>
+    <string name="f5">
+        Ingredients:- \n
+    - Basmati rice\n
+    - Mixed vegetables (carrots, peas, potatoes, etc.)\n
+    - Onion, sliced\n
+    - Tomato, chopped\n
+    - Ginger-garlic paste\n
+    - Biryani masala\n
+    - Yogurt\n
+    - Saffron or turmeric\n
+    - Ghee or oil\n
+    - Fresh cilantro and mint\n
+
+       Instructions:- \n
+    - Cook basmati rice until 70% done.\n
+    - Sauté onions, ginger-garlic paste, and vegetables in ghee.\n
+    - Add chopped tomatoes, yogurt, and biryani masala. Cook until vegetables are tender.\n
+    - Layer the partially cooked rice over the vegetable mixture.\n
+    - Sprinkle saffron or turmeric, cilantro, and mint on top.\n
+    - Cover and cook on low heat until rice is fully done.\n
+
+    Enjoy your veg biryani!
+    </string>
+    <string name="f6">
+        Ingredients:- \n
+  - Boiled potatoes, cubed\n
+  - Cumin seeds\n
+  - Turmeric powder\n
+  - Red chili powder\n
+  - Salt\n
+  - Oil\n
+  - Fresh cilantro\n
+
+     Instructions:- \n
+  - Heat oil, add cumin seeds, and let them splutter.\n
+  - Add cubed potatoes, turmeric, red chili powder, and salt.\n
+  - Sauté until potatoes are crispy and well-coated with spices.\n
+  - Garnish with fresh cilantro.\n
+
+    Enjoy your jeera aloo!
+    </string>
+    <string name="f7">
+
+         Ingredients:- \n
+  - Cooked lentils (toor dal)\n
+  - Onion, chopped\n
+  - Tomato, chopped\n
+  - Ginger-garlic paste\n
+  - Green chili, chopped\n
+  - Turmeric powder\n
+  - Cumin seeds\n
+  - Mustard seeds\n
+  - Ghee or oil\n
+  - Fresh cilantro\n
+        Instructions:- \n
+  - Heat ghee, add cumin and mustard seeds, and let them splutter.\n
+  - Sauté onions, ginger-garlic paste, and green chili until golden.\n
+  - Add tomatoes, turmeric, and cook until soft.\n
+  - Pour this tadka over cooked lentils and mix well.\n
+  - Garnish with fresh cilantro.\n
+
+      Enjoy your dal tadka!
+    </string>
 </resources>

@@ -4,14 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:orientation="vertical"
+    android:background="#FDBE31"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FullView">
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:id="@+id/viewimg"/>
-    <TextView
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:cardCornerRadius="500dp"
+        android:layout_marginStart="80dp"
+        android:backgroundTint="#fcf3cf">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/viewimg"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            tools:ignore="MissingClass" />
+    </androidx.cardview.widget.CardView>
+            <TextView
         android:id="@+id/viewname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,13 +38,21 @@
         android:layout_gravity="center"
         android:textStyle="bold"
         android:textSize="20sp"/>
-    <TextView
-        android:id="@+id/viewdesc"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="HELLO ARYAN"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
 
+            <TextView
+                android:id="@+id/viewdesc"
+                android:layout_width="382dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/bg"
+                android:paddingStart="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:text="HELLO ARYAN"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

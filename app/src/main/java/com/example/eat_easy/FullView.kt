@@ -28,7 +28,7 @@ class FullView : AppCompatActivity() {
         val intent:Intent = intent
         val rimage:Int=intent.getIntExtra("ReceipeImg",0)
         val rname:String= intent.getStringExtra("ReceipeName").toString()
-        val rdesc:String= intent.getStringExtra("ReceipeName").toString()
+        val rdesc:String= intent.getStringExtra("ReceipeDesc").toString()
         Image.setImageResource(rimage)
         name.text=rname
         desc.text=rdesc

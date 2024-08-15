@@ -30,12 +30,12 @@ class recipelist : AppCompatActivity() {
 
     private fun maxican() {
         items = listOf(
-            recipe_list_model(R.drawable.paneer, " aryan Masala "),
-            recipe_list_model(R.drawable.chole, "shreya"),
-            recipe_list_model(R.drawable.bhindi, "ankoit Bhindi"),
-            recipe_list_model(R.drawable.biryani, "manoj. Biryani"),
-            recipe_list_model(R.drawable.jeera_aloo, "Jeera Aloo"),
-            recipe_list_model(R.drawable.dal, "Dal vishal"),
+            recipe_list_model(R.drawable.paneer_makhani ," aryan Masala ",""),
+            recipe_list_model(R.drawable.chole, "shreya",""),
+            recipe_list_model(R.drawable.bhindi_masala, "ankoit Bhindi",""),
+            recipe_list_model(R.drawable.biryani, "manoj. Biryani",""),
+            recipe_list_model(R.drawable.aaloo_sabji, "Jeera Aloo",""),
+            recipe_list_model(R.drawable.dal, "Dal vishal",""),
         )
 
 
@@ -43,23 +43,23 @@ class recipelist : AppCompatActivity() {
 
     private fun indian(){
         items = listOf(
-            recipe_list_model(R.drawable.paneer, " Paneer Masala "),
-            recipe_list_model(R.drawable.chole, "Chole"),
-            recipe_list_model(R.drawable.bhindi, "Masala Bhindi"),
-            recipe_list_model(R.drawable.biryani, "Veg. Biryani"),
-            recipe_list_model(R.drawable.jeera_aloo, "Jeera Aloo"),
-            recipe_list_model(R.drawable.dal, "Dal Tadka"),
+            recipe_list_model(R.drawable.paneer_makhani, " Paneer Butter Masala ",resources.getString(R.string.f2)),
+            recipe_list_model(R.drawable.chole, "Chole",resources.getString(R.string.f3)),
+            recipe_list_model(R.drawable.bhindi_masala, "Masala Bhindi",resources.getString(R.string.f4)),
+            recipe_list_model(R.drawable.biryani, "Veg. Biryani",resources.getString(R.string.f5)),
+            recipe_list_model(R.drawable.aaloo_sabji, "Jeera Aloo",resources.getString(R.string.f6)),
+            recipe_list_model(R.drawable.dal, "Dal Tadka",resources.getString(R.string.f7)),
         )
     }
 
     private fun italian() {
         items = listOf(
-            recipe_list_model(R.drawable.paneer, " riya Masala "),
-            recipe_list_model(R.drawable.chole, "snhea"),
-            recipe_list_model(R.drawable.bhindi, "preeti Bhindi"),
-            recipe_list_model(R.drawable.biryani, "puspa. Biryani"),
-            recipe_list_model(R.drawable.jeera_aloo, "Jeera Aloo"),
-            recipe_list_model(R.drawable.dal, "Dal Tadka"),
+            recipe_list_model(R.drawable.lasagna1, " Lasagnia",""),
+            recipe_list_model(R.drawable.spegheti, "Red Sauce Pasta",""),
+            recipe_list_model(R.drawable.burger, "Veg. Cheese Burger",""),
+            recipe_list_model(R.drawable.noodles, "Spegheti",""),
+            recipe_list_model(R.drawable.pasta_salad, "Pasta Salad",""),
+            recipe_list_model(R.drawable.pizza, "Pizza",""),
         )
 
     }

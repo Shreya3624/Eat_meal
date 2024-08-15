@@ -11,10 +11,10 @@
     <item
         android:id="@+id/nav_mlist"
         android:title="Meal planner"
-        android:icon="@drawable/meal_plan2" />
+        android:icon="@drawable/baseline_restaurant_menu_24" />
     <item
         android:id="@+id/nav_profile"
-        android:title="profile"
+        android:title="Profile"
         android:icon="@drawable/baseline_person_24"/>
 
 </menu>
