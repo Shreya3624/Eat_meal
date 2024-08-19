@@ -32,7 +32,7 @@
             android:layout_marginTop="100dp"
             android:drawableLeft="@drawable/baseline_person_24"
             android:drawablePadding="20dp"
-            android:text="Shreya Solanki"
+            android:text="Aryan Rajput"
             android:padding="10dp"
             android:textSize="20dp"
             android:textStyle="bold"

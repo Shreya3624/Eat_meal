@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ExtraText"
+    android:layout_marginBottom="20dp"
+    android:elevation="20dp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:background="#fcf3cf"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:background="#fcf3cf"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today meal"
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="263dp"
+                android:layout_height="51dp"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:layout_marginTop="10dp"
+                android:text="BREAKFAST"/>
+
+            <Spinner
+                android:layout_width="260dp"
+                android:layout_height="48dp"
+                android:id="@+id/Breakfast_spi"/>
+            <TextView
+                android:layout_width="263dp"
+                android:layout_height="51dp"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:layout_marginTop="10dp"
+                android:text="launch"/>
+
+            <Spinner
+                android:layout_width="260dp"
+                android:id="@+id/launch_spi"
+                android:layout_height="48dp" />
+            <TextView
+                android:layout_width="263dp"
+                android:layout_height="51dp"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:layout_marginTop="10dp"
+                android:text="Dinner"/>
+
+            <Spinner
+                android:layout_width="260dp"
+                android:id="@+id/dinner_spi"
+                android:layout_height="48dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/delete"
+                android:text="delete"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.cardview.widget.CardView>
