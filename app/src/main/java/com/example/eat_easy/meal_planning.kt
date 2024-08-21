@@ -44,10 +44,8 @@ class meal_planning : Fragment() {
     @SuppressLint("MissingInflatedId")
     fun meal_design(){
         val meal_design : View = LayoutInflater.from(requireContext()). inflate(R.layout.meal_design,layoutcontainer,false)
-
-
         val delete : Button = meal_design.findViewById(R.id.delete)
-        var morining:Spinner=meal_design.findViewById(R.id.Breakfast_spi)
+        val morining:Spinner=meal_design.findViewById(R.id.Breakfast_spi)
         val launch:Spinner=meal_design.findViewById(R.id.launch_spi)
         val dinner:Spinner=meal_design.findViewById(R.id.dinner_spi)
         val Mitems = listOf("Item 1", "Item 2", "Item 3", "Item 4")

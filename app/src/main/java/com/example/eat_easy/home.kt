@@ -22,17 +22,17 @@ class home : Fragment() {
        btnind.setOnClickListener {
            val intent = Intent(activity,recipelist::class.java)
            intent.putExtra("condition",1)
-           startActivity(intent);
+           startActivity(intent)
        }
         btnita.setOnClickListener {
             val intent = Intent(activity,recipelist::class.java)
             intent.putExtra("condition",2)
-            startActivity(intent);
+            startActivity(intent)
         }
         btnmax.setOnClickListener {
             val intent = Intent(activity,recipelist::class.java)
             intent.putExtra("condition",3)
-            startActivity(intent);
+            startActivity(intent)
         }
 // Inflate the layout for this fragment
 
