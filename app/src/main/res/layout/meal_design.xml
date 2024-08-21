@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:cardCornerRadius="30dp"
     tools:ignore="ExtraText"
     android:layout_marginBottom="20dp"
     android:elevation="20dp"
@@ -14,6 +15,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:background="#fcf3cf"
+        app:cardCornerRadius="30dp"
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +28,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Today meal"
+                android:text="Your Today's meal"
+                android:layout_marginStart="10dp"
                 android:textColor="@color/black"
                 android:textSize="30sp" />
 
@@ -34,7 +37,9 @@
                 android:layout_width="263dp"
                 android:layout_height="51dp"
                 android:gravity="center"
-                android:textSize="30sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20dp"
                 android:layout_marginTop="10dp"
                 android:text="BREAKFAST"/>
 
@@ -46,9 +51,11 @@
                 android:layout_width="263dp"
                 android:layout_height="51dp"
                 android:gravity="center"
-                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
                 android:layout_marginTop="10dp"
-                android:text="launch"/>
+                android:text="LUNCH"/>
 
             <Spinner
                 android:layout_width="260dp"
@@ -58,19 +65,40 @@
                 android:layout_width="263dp"
                 android:layout_height="51dp"
                 android:gravity="center"
-                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
                 android:layout_marginTop="10dp"
-                android:text="Dinner"/>
+                android:text="DINNER"/>
 
             <Spinner
                 android:layout_width="260dp"
                 android:id="@+id/dinner_spi"
                 android:layout_height="48dp" />
+
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/delete"
-                android:text="delete"/>
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="-100dp"
+                android:background="@drawable/btn_shape"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="delete"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-49dp"
+                android:background="@drawable/btn_shape"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

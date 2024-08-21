@@ -27,18 +27,13 @@ class sign_up : AppCompatActivity() {
             val intent1 = Intent(this,login::class.java)
             startActivity(intent1)
         }
-
         btn.setOnClickListener {
             if (txt_uname.text.toString().isEmpty()) {
                 txt_uname.setError("Field can't be empty!")
             }
-
-
-
 //              if (!isValidEmail(emailInput)) {
 //              //  txt_mail.setError("Please enter valid Email")
 //            }
-
            else if(txt_pass.length()<6){
                 txt_pass.setError("Maximum 6 character required")
             }
@@ -55,19 +50,14 @@ class sign_up : AppCompatActivity() {
                 height=(txt_height.text.toString()).toDouble()
                 val bmi = calculateBMI(weight, height)
 
-
                 when {
                     bmi < 18.5 -> Toast.makeText(this,"$bmi underweight",Toast.LENGTH_LONG).show()
                     bmi in 18.5..24.9 -> Toast.makeText(this,"$bmi normal",Toast.LENGTH_LONG).show()
                     bmi in 25.0..29.9 -> Toast.makeText(this,"$bmi overweight",Toast.LENGTH_LONG).show()
                     else ->  Toast.makeText(this,"invalid",Toast.LENGTH_LONG).show()
                 }
-
             }
-
         }
-
-
     }
     fun isValidEmail(email: String): Boolean {
         val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$".toRegex()

@@ -3,15 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fcf3cf "
+    android:background="#fefdf6"
     tools:context=".meal_planning">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:layout_marginTop="50dp"
         android:id="@+id/meal_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="DD//MM//YYYY"
+        android:hint="DD/MM/YYYY"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -19,7 +20,9 @@
         android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_shape"
         android:layout_toEndOf="@+id/meal_date"
         android:text="+"
         android:textSize="20sp"
