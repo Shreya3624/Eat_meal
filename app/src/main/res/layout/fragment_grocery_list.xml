@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="?attr/actionBarSize"
     tools:context=".grocery_list">
 
 
@@ -13,6 +14,7 @@
         android:layout_marginTop="10dp"
         android:background="#E8F5E9"
         android:hint="Grocery List: need to buy..."
+        android:singleLine="true"
         android:padding="10dp"
         tools:ignore="TouchTargetSizeCheck" />
 
@@ -26,11 +28,35 @@
         android:layout_marginEnd="13dp"
         android:text="Add" />
 
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_below="@+id/buttonAddItem"-->
+<!--        android:layout_height="match_parent">-->
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:id="@+id/itemcon"-->
+<!--    android:orientation="vertical">-->
+
     <ListView
         android:id="@+id/listViewItems"
+        android:layout_below="@id/editTextItem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonAddItem"
+        android:layout_height="500dp"
         android:layout_marginTop="10dp" />
+
+    <Button
+        android:id="@+id/btndelete"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/listViewItems"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Delete" />
+<!--</LinearLayout>-->
+
+<!--    </ScrollView>-->
+
+
 
 </RelativeLayout>
