@@ -169,4 +169,98 @@ Enjoy your delicious Paneer Butter Masala!\n
 
       Enjoy your dal tadka!
     </string>
+    <string name="i1">
+
+  Ingredients :- \n
+        \n
+- 12 lasagna noodles \n
+- 1 lb (450g) ground beef \n
+- 1 onion, chopped \n
+- 2 cups marinara sauce \n
+- 15 oz (425g) ricotta cheese \n
+- 1 egg \n
+- 1/2 cup grated Parmesan cheese \n
+- 3 cups shredded mozzarella cheese \n
+- Salt and pepper to taste \n
+           \n
+
+  Instructions :- \n
+        \n
+- Preheat oven to 375°F (190°C) \n
+- Cook lasagna noodles according to package instructions \n
+- Brown ground beef with chopped onion \n
+- Add marinara sauce to beef, simmer for 10 minutes \n
+- In a bowl, mix ricotta cheese with egg and Parmesan cheese \n
+- In a baking dish, spread a thin layer of meat sauce \n
+- Layer noodles, ricotta mixture, meat sauce, and shredded mozzarella \n
+- Repeat layers until all ingredients are used \n
+- Top with a final layer of noodles and meat sauce \n
+- Sprinkle extra mozzarella and Parmesan on top \n
+- Cover with foil and bake for 25 minutes \n
+- Remove foil and bake for an additional 25 minutes \n
+- Let it cool for 10 minutes before serving \n
+    </string>
+ <string name="i2">
+
+  Ingredients :- \n
+     \n
+- 8 or (225g) pasta (penne, spaghetti, or your choice) \n
+- 2 cups tomato puree \n
+- 1 onion, finely chopped \n
+- 4 garlic cloves, minced \n
+- 1/2 tsp red chili flakes \n
+- 1/2 tsp dried oregano \n
+- 1/2 tsp dried basil \n
+- 2 tbsp olive oil \n
+- Salt and pepper to taste \n
+- Fresh basil leaves for garnish \n
+- Grated Parmesan cheese for garnish \n
+ \n
+  Instructions :- \n
+     \n
+- Cook pasta according to package instructions \n
+- Heat olive oil in a pan over medium heat \n
+- Sauté chopped onion until translucent \n
+- Add minced garlic and cook until fragrant \n
+- Add tomato puree, red chili flakes, oregano, and basil \n
+- Simmer sauce for 10-15 minutes until thickened \n
+- Season with salt and pepper to taste \n
+- Add cooked pasta to the sauce and toss to coat evenly \n
+- Garnish with fresh basil leaves and grated Parmesan cheese \n
+- Serve hot and enjoy \n
+ </string>
+    <string name="i3">
+  Ingredients :-\n
+        \n
+- 4 burger buns \n
+- 2 large potatoes, boiled and mashed \n
+- 1 carrot, grated \n
+- 1/2 cup green peas, boiled \n
+- 1/4 cup corn kernels, boiled \n
+- 1/2 tsp red chili powder \n
+- 1/2 tsp garam masala \n
+- Salt to taste \n
+- 2 tbsp breadcrumbs \n
+- 4 slices of cheese \n
+- 4 lettuce leaves \n
+- 1 tomato, sliced \n
+- 1 onion, sliced \n
+- 2 tbsp mayonnaise \n
+- 2 tbsp ketchup \n
+- 2 tbsp oil for shallow frying \n
+    \n
+  Instructions :- \n
+- In a bowl, mix mashed potatoes, grated carrot, green peas, and corn \n
+- Add red chili powder, garam masala, and salt \n
+- Add breadcrumbs and mix well to form a dough \n
+- Shape the mixture into 4 patties \n
+- Heat oil in a pan and shallow fry patties until golden brown on both sides \n
+- Toast burger buns in the same pan until slightly crispy \n
+- Spread mayonnaise and ketchup on the buns \n
+- Place a lettuce leaf on the bottom bun, followed by a patty \n
+- Add a slice of cheese on top of the patty \n
+- Top with tomato and onion slices \n
+- Cover with the top bun \n
+- Serve hot and enjoy your veg cheese burger \n
+    </string>
 </resources>

@@ -54,9 +54,9 @@ class recipelist : AppCompatActivity() {
 
     private fun italian() {
         items = listOf(
-            recipe_list_model(R.drawable.lasagna1, " Lasagnia",""),
-            recipe_list_model(R.drawable.spegheti, "Red Sauce Pasta",""),
-            recipe_list_model(R.drawable.burger, "Veg. Cheese Burger",""),
+            recipe_list_model(R.drawable.lasagna1, " Lasagnia",resources.getString(R.string.i1)),
+            recipe_list_model(R.drawable.spegheti, "Red Sauce Pasta",resources.getString(R.string.i2)),
+            recipe_list_model(R.drawable.burger, "Veg. Cheese Burger",resources.getString(R.string.i3)),
             recipe_list_model(R.drawable.noodles, "Spegheti",""),
             recipe_list_model(R.drawable.pasta_salad, "Pasta Salad",""),
             recipe_list_model(R.drawable.pizza, "Pizza",""),
