@@ -26,10 +26,11 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="308dp"
                 android:layout_height="wrap_content"
-                android:text="Your Today's meal"
                 android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:text="𝐏𝐥𝐚𝐧 𝐘𝐨𝐮𝐫 𝐓𝐨𝐝𝐚𝐲'𝐬 𝐌𝐞𝐚𝐥 𝐖𝐢𝐭𝐡 𝐔𝐒 !"
                 android:textColor="@color/black"
                 android:textSize="30sp" />
 
@@ -39,9 +40,9 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:layout_marginTop="10dp"
-                android:text="BREAKFAST"/>
+                android:text="𝐁𝐫𝐞𝐚𝐤𝐟𝐚𝐬𝐭"/>
 
             <Spinner
                 android:layout_width="260dp"
@@ -53,9 +54,9 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:layout_marginTop="10dp"
-                android:text="LUNCH"/>
+                android:text="𝐋𝐮𝐧𝐜𝐡"/>
 
             <Spinner
                 android:layout_width="260dp"
@@ -67,9 +68,9 @@
                 android:gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:layout_marginTop="10dp"
-                android:text="DINNER"/>
+                android:text="𝐃𝐢𝐧𝐧𝐞𝐫"/>
 
             <Spinner
                 android:layout_width="260dp"
@@ -84,8 +85,8 @@
                 android:layout_marginLeft="-100dp"
                 android:background="@drawable/btn_shape"
                 android:textStyle="bold"
-                android:textSize="20dp"
-                android:text="delete"
+                android:textSize="25dp"
+                android:text="𝐃𝐞𝐥𝐞𝐭𝐞"
                 android:textColor="@color/white" />
 
             <Button
@@ -95,9 +96,9 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="-49dp"
                 android:background="@drawable/btn_shape"
-                android:text="Save"
+                android:text="𝐒𝐚𝐯𝐞"
                 android:textColor="@color/white"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
         </LinearLayout>
 

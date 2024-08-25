@@ -18,6 +18,7 @@ class sign_up : AppCompatActivity() {
         val txt_weight:EditText=findViewById(R.id.txt_weight)
         val txt_height:EditText=findViewById(R.id.txt_height)
         val txt1:TextView = findViewById(R.id.txt1)
+        val txt_bmi:TextView = findViewById(R.id.txt_bmi)
         val btn:Button=findViewById(R.id.btn)
         var weight:Double
         var height:Double
@@ -54,7 +55,7 @@ class sign_up : AppCompatActivity() {
                     bmi < 18.5 -> Toast.makeText(this,"$bmi underweight",Toast.LENGTH_LONG).show()
                     bmi in 18.5..24.9 -> Toast.makeText(this,"$bmi normal",Toast.LENGTH_LONG).show()
                     bmi in 25.0..29.9 -> Toast.makeText(this,"$bmi overweight",Toast.LENGTH_LONG).show()
-                    else ->  Toast.makeText(this,"invalid",Toast.LENGTH_LONG).show()
+                    else ->  Toast.makeText(this,"can't calculate",Toast.LENGTH_LONG).show()
                 }
             }
         }

@@ -4,31 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="?attr/actionBarSize"
+    android:background="#fefdf6"
     tools:context=".grocery_list">
 
 
     <EditText
         android:id="@+id/editTextItem"
-        android:layout_width="306dp"
-        android:layout_height="wrap_content"
+        android:layout_width="313dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
-        android:background="#E8F5E9"
+        android:background="@drawable/bg"
         android:hint="Grocery List: need to buy..."
-        android:singleLine="true"
         android:padding="10dp"
+        android:singleLine="true"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <Button
-        android:id="@+id/buttonAddItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextItem"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="-42dp"
-        android:layout_marginEnd="13dp"
-        android:text="Add" />
-
-<!--    <ScrollView-->
+    <!--    <ScrollView-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_below="@+id/buttonAddItem"-->
 <!--        android:layout_height="match_parent">-->
@@ -38,22 +30,46 @@
 <!--    android:id="@+id/itemcon"-->
 <!--    android:orientation="vertical">-->
 
+    <Button
+        android:id="@+id/buttonAddItem"
+        android:layout_width="67dp"
+        android:layout_height="59dp"
+        android:layout_below="@id/editTextItem"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/btn_shape"
+        android:text="𝐀𝐝𝐝"
+        android:textSize="20dp"
+        android:textColor="@color/white" />
+
     <ListView
         android:id="@+id/listViewItems"
+        android:layout_width="376dp"
+        android:layout_height="534dp"
         android:layout_below="@id/editTextItem"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="10dp" />
+        android:layout_centerInParent="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="#fcf3cf" />
 
     <Button
         android:id="@+id/btndelete"
-        android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_width="120dp"
+        android:layout_height="61dp"
         android:layout_below="@id/listViewItems"
-        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:text="Delete" />
-<!--</LinearLayout>-->
+        android:layout_marginTop="3dp"
+        android:background="@drawable/btn_shape"
+        android:text="𝐃𝐞𝐥𝐞𝐭𝐞"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+    <!--</LinearLayout>-->
 
 <!--    </ScrollView>-->
 

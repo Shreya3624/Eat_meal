@@ -48,9 +48,9 @@ class meal_planning : Fragment() {
         val morining:Spinner=meal_design.findViewById(R.id.Breakfast_spi)
         val launch:Spinner=meal_design.findViewById(R.id.launch_spi)
         val dinner:Spinner=meal_design.findViewById(R.id.dinner_spi)
-        val Mitems = listOf("Item 1", "Item 2", "Item 3", "Item 4")
-        val Litems = listOf("Item 1", "Item 2", "Item 3", "Item 4")
-        val Ditems = listOf("Item 1", "Item 2", "Item 3", "Item 4")
+        val Mitems = listOf("𝐌𝐚𝐬𝐚𝐥𝐚 𝐎𝐚𝐭𝐬", "𝐀𝐯𝐨𝐜𝐚𝐝𝐨 𝐓𝐨𝐚𝐬𝐭", "𝐕𝐞𝐠𝐠𝐢𝐞 𝐎𝐦𝐞𝐥𝐞𝐭𝐭𝐞", "𝐁𝐫𝐚𝐞𝐝-𝐁𝐮𝐭𝐭𝐞𝐫")
+        val Litems = listOf("𝐌𝐢𝐱𝐞𝐝 𝐕𝐞𝐠 𝐒𝐚𝐛𝐣𝐢", "𝐓𝐚𝐝𝐤𝐚 𝐃𝐚𝐥", "𝐕𝐞𝐠𝐞𝐭𝐚𝐛𝐥𝐞 𝐏𝐮𝐥𝐚𝐨", "𝐊𝐚𝐝𝐡𝐢 𝐰𝐢𝐭𝐡 𝐁𝐫𝐨𝐰𝐧 𝐑𝐢𝐜𝐞")
+        val Ditems = listOf("𝐌𝐚𝐬𝐨𝐨𝐫 𝐃𝐚𝐥", "𝐌𝐨𝐨𝐧𝐠 𝐃𝐚𝐥 𝐂𝐡𝐢𝐥𝐥𝐚", "𝐑𝐚𝐣𝐦𝐚 𝐂𝐡𝐚𝐰𝐚𝐥", "𝐕𝐞𝐠𝐞𝐭𝐚𝐛𝐥𝐞 𝐈𝐝𝐥𝐢 𝐰𝐢𝐭𝐡 𝐒𝐚𝐦𝐛𝐡𝐚𝐫")
         val Madapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, Mitems)
          morining.adapter=Madapter
          val Ladapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, Litems)
