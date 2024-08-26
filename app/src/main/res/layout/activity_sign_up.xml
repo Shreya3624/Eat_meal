@@ -188,7 +188,7 @@
             android:layout_marginStart="70dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/app_logo1" />
+            app:srcCompat="@drawable/app_logo_1" />
 
         <ImageView
             android:id="@+id/imageView2"
