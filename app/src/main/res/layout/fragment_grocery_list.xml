@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="?attr/actionBarSize"
     android:background="#fefdf6"
     tools:context=".grocery_list">
 
@@ -47,8 +46,8 @@
 
     <ListView
         android:id="@+id/listViewItems"
-        android:layout_width="376dp"
-        android:layout_height="534dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/editTextItem"
         android:layout_centerInParent="true"
         android:layout_marginStart="15dp"
@@ -57,18 +56,7 @@
         android:layout_marginBottom="15dp"
         android:background="#fcf3cf" />
 
-    <Button
-        android:id="@+id/btndelete"
-        android:layout_width="120dp"
-        android:layout_height="61dp"
-        android:layout_below="@id/listViewItems"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="3dp"
-        android:background="@drawable/btn_shape"
-        android:text="𝐃𝐞𝐥𝐞𝐭𝐞"
-        android:textColor="@color/white"
-        android:textSize="25dp" />
+
     <!--</LinearLayout>-->
 
 <!--    </ScrollView>-->

@@ -14,7 +14,6 @@ import android.widget.ListView
 class grocery_list : Fragment() {
     private lateinit var editTextItem: EditText
     private lateinit var buttonAddItem: Button
-    private lateinit var buttondelete: Button
     private lateinit var listViewItems: ListView
     private val itemsList = ArrayList<String>()
     private lateinit var adapter: ArrayAdapter<String>
@@ -30,12 +29,13 @@ class grocery_list : Fragment() {
         val view:View= inflater.inflate(R.layout.fragment_grocery_list, container, false)
         editTextItem = view.findViewById(R.id.editTextItem)
         buttonAddItem = view.findViewById(R.id.buttonAddItem)
-        buttondelete=view.findViewById(R.id.btndelete)
-        listViewItems =view.findViewById(R.id.listViewItems)
-        buttondelete.visibility=View.INVISIBLE
-        adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, itemsList)
-        listViewItems.adapter = adapter
 
+        listViewItems =view.findViewById(R.id.listViewItems)
+
+//        adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, itemsList)
+//        listViewItems.adapter = adapter
+        adapter=customlistview(requireContext(),itemsList)
+        listViewItems.adapter=adapter
         buttonAddItem.setOnClickListener {
             val item = editTextItem.text.toString()
             if (item.isNotEmpty()) {
@@ -47,13 +47,7 @@ class grocery_list : Fragment() {
 
         listViewItems.setOnItemClickListener { _, _, position, _ ->
             removeitemindex=position
-            buttondelete.visibility=View.VISIBLE
 
-        }
-        buttondelete.setOnClickListener {
-            itemsList.removeAt(removeitemindex)
-            adapter.notifyDataSetChanged()
-            buttondelete.visibility=View.INVISIBLE
         }
         return view
     }
