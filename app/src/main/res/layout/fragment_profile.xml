@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -24,6 +24,9 @@
         android:layout_marginTop="200dp"
         app:cardCornerRadius="25dp"
         android:backgroundTint="#FDBE31">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/txt_uname"
@@ -42,79 +45,73 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.652" />
-
         <TextView
-            android:id="@+id/txt_bmi"
+            android:id="@+id/pr_email"
+            android:layout_below="@+id/txt_uname"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:layout_marginTop="150dp"
+            android:drawableLeft="@drawable/baseline_person_24"
+            android:drawablePadding="20dp"
+            android:text="Aryan Rajput"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+             />
+
+        <TextView
+            android:id="@+id/pr_bmi"
+            android:layout_below="@+id/pr_email"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
             android:drawableLeft="@drawable/baseline_info_24"
             android:drawablePadding="20dp"
             android:text="My BMI : Overweight"
             android:padding="10dp"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.754" />
+            />
 
         <TextView
             android:id="@+id/txt_nut"
+            android:layout_below="@id/pr_bmi"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:layout_marginTop="200dp"
             android:drawableLeft="@drawable/baseline_restaurant_menu_24"
             android:drawablePadding="20dp"
             android:padding="10dp"
             android:text="Nutritional Goals"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.754" />
+           />
 
         <TextView
             android:id="@+id/txt_help"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:layout_marginTop="245dp"
+            android:layout_below="@id/txt_nut"
             android:drawableLeft="@drawable/baseline_help_outline_24"
             android:drawablePadding="20dp"
             android:padding="10dp"
             android:text="Need Help ?"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.754" />
+             />
 
         <Button
             android:id="@+id/btn"
             android:layout_width="182dp"
             android:layout_height="68dp"
+            android:layout_below="@id/txt_help"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="400dp"
             android:background="@drawable/btn_shape"
             android:backgroundTint="#fcf3cf "
             android:text="𝐋𝐨𝐠 - 𝐨𝐮𝐭"
             android:textColor="@color/black"
             android:textSize="30dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.907" />
+            />
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
-</FrameLayout>
+</RelativeLayout>

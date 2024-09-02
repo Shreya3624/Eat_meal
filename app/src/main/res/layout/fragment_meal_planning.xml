@@ -20,8 +20,7 @@
         android:paddingTop="8dp"
         android:paddingRight="8dp"
         android:paddingBottom="8dp"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        android:textSize="25dp"/>
 
     <Button
         android:id="@+id/btn_add"

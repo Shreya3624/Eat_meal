@@ -19,7 +19,7 @@ class home : Fragment() {
        val btnind: Button = view.findViewById(R.id.btn_inidan)
         val btnita: Button = view.findViewById(R.id.btn_italian)
         val btnmax: Button = view.findViewById(R.id.btn_maxican)
-       btnind.setOnClickListener {
+        btnind.setOnClickListener {
            val intent = Intent(activity,recipelist::class.java)
            intent.putExtra("condition",1)
            startActivity(intent)
@@ -34,8 +34,6 @@ class home : Fragment() {
             intent.putExtra("condition",3)
             startActivity(intent)
         }
-// Inflate the layout for this fragment
-
         return view
     }
 }

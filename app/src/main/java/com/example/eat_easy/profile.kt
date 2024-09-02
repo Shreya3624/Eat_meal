@@ -1,59 +1,67 @@
 package com.example.eat_easy
 
+import android.content.Intent
+import android.database.Cursor
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import com.example.eat_easy.DataBase.Companion.COLUMN_BMI
+import com.example.eat_easy.DataBase.Companion.COLUMN_USERNAME
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [profile.newInstance] factory method to
- * create an instance of this fragment.
- */
 class profile : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var USERNAME: TextView
+    private lateinit var Email: TextView
+    private lateinit var Bmi: TextView
+    private lateinit var btn_logOut: Button
+    private lateinit var dbHelper: DataBase
+    private lateinit var shared:Shareprefrence
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
-    }
+        val view: View = inflater.inflate(R.layout.fragment_profile, container, false)
+        USERNAME = view.findViewById(R.id.txt_uname)
+        Email = view.findViewById(R.id.pr_email)
+        Bmi = view.findViewById(R.id.pr_bmi)
+        btn_logOut = view.findViewById(R.id.btn)
+        dbHelper = DataBase(requireContext())
+        shared= Shareprefrence(requireContext())
+        val email = shared.getEmail()
+        // Assuming the email is passed as an argument
+        if (email != null) {
+            loadUserData(email)
+        } else {
+            Toast.makeText(requireContext(), "No user data found", Toast.LENGTH_SHORT).show()
+        }
+        btn_logOut.setOnClickListener {
+            shared.setlogin(false)
+            val intent = Intent(requireContext(), login::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
+        return view
+}
+    private fun loadUserData(email: String) {
+        val cursor: Cursor? = dbHelper.getUserByEmail(email)
+        if (cursor != null && cursor.moveToFirst()) {
+            val username = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_USERNAME))
+            val bmi = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_BMI))
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment profile.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            profile().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+            // Set the data to the UI elements
+            USERNAME.text = username
+            Email.text=email
+            Bmi.text = "My BMI: $bmi"
+
+            cursor.close()
+        } else {
+            Toast.makeText(requireContext(), "User not found", Toast.LENGTH_SHORT).show()
+        }
     }
 }

@@ -7,23 +7,30 @@
 
         <CheckBox
             android:id="@+id/checkBox"
+            android:layout_marginStart="50dp"
+            android:backgroundTint="#FEBD30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp" />
 
-        <TextView
-            android:id="@+id/textViewItemName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Item Name"
-            android:textSize="18sp" />
+    <TextView
+        android:id="@+id/textViewItemName"
+        android:layout_width="192dp"
+        android:layout_height="34dp"
+        android:layout_weight="1"
+        android:text="Item Name"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/buttonDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete" />
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_shape"
+        android:text="𝐃𝐞𝐥𝐞𝐭𝐞"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     </LinearLayout>
 

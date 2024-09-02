@@ -7,15 +7,24 @@ import android.os.Handler
 import android.os.Looper
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var share:Shareprefrence
     private lateinit var handler: Handler
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        share= Shareprefrence(this)
         handler= Handler(Looper.getMainLooper())
         handler.postDelayed({
-            val intent =Intent(this,sign_up::class.java)
-            startActivity(intent)
-            finish()
+            if (share.getLogin()){
+                val intent =Intent(this,home_page::class.java)
+                startActivity(intent)
+                finish()
+            }
+            else{
+                val intent =Intent(this,sign_up::class.java)
+                startActivity(intent)
+                finish()
+            }
         },2000)
     }
 }
