@@ -12,14 +12,14 @@ import android.widget.TextView
 
 class customlistview(context: Context, private val items: ArrayList<String>) :
     ArrayAdapter<String>(context, 0, items) {
-
+    private lateinit var dbHelper: DataBase
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.customlistview  , parent, false)
-
         val checkBox = view.findViewById<CheckBox>(R.id.checkBox)
         val textViewItemName = view.findViewById<TextView>(R.id.textViewItemName)
         val buttonDelete = view.findViewById<Button>(R.id.buttonDelete)
         textViewItemName.text = items[position]
+        dbHelper=DataBase(context)
 if (!checkBox.isChecked){
     buttonDelete.visibility=View.INVISIBLE
 }
@@ -30,7 +30,7 @@ if (!checkBox.isChecked){
 
         // Handle delete button click
         buttonDelete.setOnClickListener {
-
+            dbHelper.deleteGroceryItem(position)
             items.removeAt(position)
            checkBox.isChecked=false
             notifyDataSetChanged()
