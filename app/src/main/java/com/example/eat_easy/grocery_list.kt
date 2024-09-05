@@ -16,7 +16,8 @@ class grocery_list : Fragment() {
     private lateinit var buttonAddItem: Button
     private lateinit var listViewItems: ListView
     private val itemsList = ArrayList<String>()
-    private lateinit var adapter: ArrayAdapter<String>
+    private val Tempid=ArrayList<Int>()
+    private lateinit var adapter: customlistview
     //private var removeitemindex:Int=0
     private lateinit var dbHelper: DataBase
 
@@ -33,37 +34,32 @@ class grocery_list : Fragment() {
         listViewItems =view.findViewById(R.id.listViewItems)
         dbHelper= DataBase(requireContext())
         val userId=1
-//        adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, itemsList)
-//        listViewItems.adapter = adapter
-        adapter=customlistview(requireContext(),itemsList)
-        listViewItems.adapter=adapter
+        loadListView(userId)
+        adapter=customlistview(requireContext(),itemsList,Tempid)
+       listViewItems.adapter=adapter
         buttonAddItem.setOnClickListener {
             val item = editTextItem.text.toString()
             if (item.isNotEmpty()) {
-//                itemsList.add(item)
-//                adapter.notifyDataSetChanged()
-                dbHelper.addGrocery(1,item)
-                loadListView(1)
+                dbHelper.addGrocery(userId,item)
+                loadListView(userId)
+                adapter.notifyDataSetChanged()
                editTextItem.text.clear() // Clear the input field after adding the item
 
             }
         }
-//
-//        listViewItems.setOnItemClickListener { _, _, position, _ ->
-//            removeitemindex=position
-//
-//        }
+
         return view
     }
     fun loadListView(Userid:Int){
         itemsList.clear()
+        Tempid.clear()
         val cursor=dbHelper.getallgrocery(Userid)
         while (cursor.moveToNext()){
-            val result=cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_GROCERY_NAME"))
+            val result=cursor.getString(cursor.getColumnIndexOrThrow("grocery_name"))
+            val id=cursor.getInt(cursor.getColumnIndexOrThrow("groceryList_id"))
             itemsList.add(result)
+            Tempid.add(id)
         }
         cursor.close()
-        adapter=customlistview(requireContext(),itemsList)
-        listViewItems.adapter=adapter
     }
 }
