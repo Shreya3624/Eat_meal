@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class DataBase(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
         private const val DATABASE_NAME = "userDatabase.db"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 4
 //USER DATA TABLE
         const val TABLE_USERS = "Users"
         private const val COLUMN_ID = "id"
@@ -105,22 +105,27 @@ private const val COLUMN_G_CREATED_AT = "created_at"
     fun addGrocery(userId:Int,GroceryName:String):Boolean {
         val db = this.writableDatabase
         val values = ContentValues().apply {
-
             put(COLUMN_USER_ID, userId)
             put(COLUMN_GROCERY_NAME, GroceryName)
         }
-       val result= db.insert(TABLE_CREATE_GROCERY_LIST, null, values)
+       val result= db.insert(TABLE_GROCERY_LIST, null, values)
         db.close()
         return result!=-1L
     }
     fun deleteGroceryItem(groceryItemId:Int):Boolean{
         val db=this.writableDatabase
-        val result=db.delete("TABLE_GROCERY_LIST","COLUMN_GROCERY_LIST_ID=?", arrayOf(groceryItemId.toString()))>0
+        val result=db.delete(TABLE_GROCERY_LIST,"$COLUMN_GROCERY_LIST_ID=?", arrayOf(groceryItemId.toString()))>0
         return result
     }
+//    fun deleteGroceryItem(groceryItemId: Int): Boolean {
+//        val db = this.writableDatabase
+//        val result = db.delete(TABLE_GROCERY_LIST, "$COLUMN_GROCERY_LIST_ID=?", arrayOf(groceryItemId.toString())) > 0
+//        db.close()
+//        return result
+//    }
     fun getallgrocery(userId:Int):Cursor{
         val db=this.readableDatabase
-        val result=db.rawQuery("SELECT * FROM TABLE_GROCERY_LIST WHERE COLUMN_USER_ID=?", arrayOf(userId.toString()))
+        val result=db.rawQuery("SELECT * FROM $TABLE_GROCERY_LIST WHERE $COLUMN_USER_ID=?", arrayOf(userId.toString()))
         return result
     }
 }
