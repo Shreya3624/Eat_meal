@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class DataBase(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
         private const val DATABASE_NAME = "userDatabase.db"
-        private const val DATABASE_VERSION = 4
+        private const val DATABASE_VERSION = 5
 //USER DATA TABLE
         const val TABLE_USERS = "Users"
         private const val COLUMN_ID = "id"
@@ -26,6 +26,14 @@ private const val COLUMN_GROCERY_LIST_ID = "groceryList_id"
 private const val COLUMN_USER_ID = "user_id"
 private const val COLUMN_GROCERY_NAME = "grocery_name"
 private const val COLUMN_G_CREATED_AT = "created_at"
+        // TABLE MEALS
+        private const val TABLE_MEALS = "Meals"
+        private const val COLUMN_MEAL_ID = "meal_id"
+        private const val COLUMN_MEAL_DATE = "meal_date"
+        private const val COLUMN_BREAKFAST = "breakfast"
+        private const val COLUMN_LUNCH = "lunch"
+        private const val COLUMN_DINNER = "dinner"
+        private const val COLUMN_MEAL_CREATED_AT = "created_at"
 
         private const val TABLE_CREATE =
             "CREATE TABLE $TABLE_USERS (" +
@@ -47,17 +55,32 @@ private const val COLUMN_G_CREATED_AT = "created_at"
                     "$COLUMN_CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
                     "FOREIGN KEY ($COLUMN_USER_ID) REFERENCES $TABLE_USERS($COLUMN_ID)" +
                     ");"
+        private const val TABLE_CREATE_MEALS =
+            "CREATE TABLE $TABLE_MEALS (" +
+                    "$COLUMN_MEAL_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    "$COLUMN_USER_ID INTEGER, " +
+                    "$COLUMN_MEAL_DATE DATE NOT NULL, " +
+                    "$COLUMN_BREAKFAST TEXT NOT NULL, " +
+                    "$COLUMN_LUNCH TEXT NOT NULL, " +
+                    "$COLUMN_DINNER TEXT NOT NULL, " +
+                    "$COLUMN_MEAL_CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
+                    "FOREIGN KEY ($COLUMN_USER_ID) REFERENCES $TABLE_USERS($COLUMN_ID)" +
+                    ");"
+
 
 
     }
     override fun onCreate(db: SQLiteDatabase?) {
+
         db?.execSQL(TABLE_CREATE)
         db?.execSQL(TABLE_CREATE_GROCERY_LIST)
+        db?.execSQL(TABLE_CREATE_MEALS)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_USERS")
         db?.execSQL("DROP TABLE IF EXISTS $TABLE_GROCERY_LIST")
+        db?.execSQL("DROP TABLE IF EXISTS $TABLE_MEALS")
         onCreate(db)
 
     }
@@ -124,5 +147,24 @@ private const val COLUMN_G_CREATED_AT = "created_at"
         val db=this.readableDatabase
         val result=db.rawQuery("SELECT * FROM $TABLE_GROCERY_LIST WHERE $COLUMN_USER_ID=?", arrayOf(userId.toString()))
         return result
+    }
+    // Meal Plan Operations
+    fun addMeal(userId: Int, mealDate: String, breakfast: String, lunch: String, dinner: String): Boolean {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_USER_ID, userId)
+            put(COLUMN_MEAL_DATE, mealDate)
+            put(COLUMN_BREAKFAST, breakfast)
+            put(COLUMN_LUNCH, lunch)
+            put(COLUMN_DINNER, dinner)
+        }
+        val result = db.insert(TABLE_MEALS, null, values)
+        db.close()
+        return result != -1L
+    }
+
+    fun getMealsByDate(userId: Int, mealDate: String): Cursor {
+        val db = this.readableDatabase
+        return db.rawQuery("SELECT * FROM $TABLE_MEALS WHERE $COLUMN_USER_ID=? AND $COLUMN_MEAL_DATE=?", arrayOf(userId.toString(), mealDate))
     }
 }

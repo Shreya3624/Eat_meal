@@ -33,5 +33,13 @@ class Shareprefrence (context: Context){
     fun getEmail () : String? {
         return sharedPreferences.getString("emailId","hello")
     }
+    fun setid(id:Int){
+        val edit = sharedPreferences.edit()
+        edit.putInt("userid",id)
+        edit.apply()
+    }
+    fun getid (): Int?{
+        return   sharedPreferences.getInt("userid",1)
+    }
 
 }
