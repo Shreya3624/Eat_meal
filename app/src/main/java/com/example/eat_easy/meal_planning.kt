@@ -11,14 +11,13 @@ import androidx.fragment.app.Fragment
 import java.util.Calendar
 
 class meal_planning : Fragment() {
-
     private lateinit var mealDate: TextView
     private lateinit var addLayout: Button
     private lateinit var layoutContainer: LinearLayout
     private lateinit var saveMealButton: Button
     private lateinit var dbHelper: DataBase
     private lateinit var shared: Shareprefrence
-    private lateinit var editButton:Button
+    private lateinit var editButton: Button
 
     private var selectedDate: String = ""
 
@@ -47,22 +46,22 @@ class meal_planning : Fragment() {
             fetchAndDisplayMealPlan(selectedDate)
         }
 
-            // Set up the "Add" button to add the meal layout
-            addLayout.setOnClickListener {
-                mealDesign()
-                addLayout.visibility = View.INVISIBLE
-            }
+        // Set up the "Add" button to add the meal layout
+        addLayout.setOnClickListener {
+            mealDesign()
+            addLayout.visibility = View.INVISIBLE
+        }
 
-            // Set up the date picker dialog for selecting meal date
-            mealDate.setOnClickListener {
-                showDatePickerDialog()
-            }
+        // Set up the date picker dialog for selecting meal date
+        mealDate.setOnClickListener {
+            showDatePickerDialog()
+        }
 
         return view
     }
 
-    @SuppressLint("MissingInflatedId", "SuspiciousIndentation")
-    private fun mealDesign() {
+    @SuppressLint("MissingInflatedId")
+    private fun mealDesign(): Boolean {
         val mealDesign: View = LayoutInflater.from(requireContext()).inflate(R.layout.meal_design, layoutContainer, false)
 
         val delete: Button = mealDesign.findViewById(R.id.delete)
@@ -70,7 +69,7 @@ class meal_planning : Fragment() {
         val lunch: Spinner = mealDesign.findViewById(R.id.launch_spi)
         val dinner: Spinner = mealDesign.findViewById(R.id.dinner_spi)
         saveMealButton = mealDesign.findViewById(R.id.save)
-         editButton = mealDesign.findViewById(R.id.Edit)
+        editButton = mealDesign.findViewById(R.id.Edit)
         editButton.visibility = View.INVISIBLE
 
         // Populate the breakfast, lunch, and dinner spinners with meals
@@ -86,9 +85,6 @@ class meal_planning : Fragment() {
 
         val Dadapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, Ditems)
         dinner.adapter = Dadapter
-        val selectedBreakfast = morning.selectedItem.toString()
-        val selectedLunch = lunch.selectedItem.toString()
-        val selectedDinner = dinner.selectedItem.toString()
 
         // Handle delete button click
         delete.setOnClickListener {
@@ -106,8 +102,31 @@ class meal_planning : Fragment() {
                 editButton.visibility = View.VISIBLE
             }
         }
+        editButton.setOnClickListener {
+            // Show confirmation dialog
+            val dialogBuilder = android.app.AlertDialog.Builder(requireContext())
+            dialogBuilder.setMessage("Do you want to update the meal plan?")
+                .setCancelable(false)
+                .setPositiveButton("Yes") { dialog, id ->
+                    // User clicked Yes, proceed to update the meal plan
+                    val userId = shared.getid() ?: return@setPositiveButton
+                    val selectedBreakfast = morning.selectedItem.toString()
+                    val selectedLunch = lunch.selectedItem.toString()
+                    val selectedDinner = dinner.selectedItem.toString()
+                    updateMeal(userId, selectedDate, selectedBreakfast, selectedLunch, selectedDinner)
+                }
+                .setNegativeButton("No") { dialog, id ->
+                    // User clicked No, dismiss the dialog
+                    dialog.dismiss()
+                }
+            // Create and show the dialog
+            val alert = dialogBuilder.create()
+            alert.setTitle("Update Meal Plan")
+            alert.show()
+        }
 
 
+        return true
     }
 
     private fun showDatePickerDialog() {
@@ -123,7 +142,7 @@ class meal_planning : Fragment() {
                 selectedDate = "$selectedDay/${selectedMonth + 1}/$selectedYear"
                 mealDate.text = selectedDate
                 shared.saveLastSelectedDate(selectedDate)  // Save selected date to SharedPreferences
-             //   fetchAndDisplayMealPlan(selectedDate) // Fetch the meal plan when the date is selected
+                fetchAndDisplayMealPlan(selectedDate) // Fetch the meal plan when the date is selected
             }, year, month, day
         )
         datePickerDialog.show()
@@ -131,7 +150,6 @@ class meal_planning : Fragment() {
 
     private fun fetchAndDisplayMealPlan(date: String) {
         // Fetch meal data from the database
-
         val userId = shared.getid() ?: return
         val mealPlan = dbHelper.getMealPlan(userId, date)
 
@@ -144,7 +162,7 @@ class meal_planning : Fragment() {
                 val morning: Spinner = mealDesign.findViewById(R.id.Breakfast_spi)
                 val lunch: Spinner = mealDesign.findViewById(R.id.launch_spi)
                 val dinner: Spinner = mealDesign.findViewById(R.id.dinner_spi)
-                addLayout.visibility=View.GONE
+                addLayout.visibility = View.GONE
                 saveMealButton.visibility = View.INVISIBLE
                 editButton.visibility = View.VISIBLE
 
@@ -187,19 +205,21 @@ class meal_planning : Fragment() {
                 return false
             }
         }
-        return true
+        return false
     }
-    private fun deleteMeals(){
+
+    private fun deleteMeals() {
         val userId = shared.getid() ?: return
-        val rowsDeleted= dbHelper.deleteMeal(userId,selectedDate)
+        val rowsDeleted = dbHelper.deleteMeal(userId, selectedDate)
         if (rowsDeleted > 0) {
             Toast.makeText(requireContext(), "Meal deleted successfully", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(requireContext(), "Meal please fill", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "No meal found to delete", Toast.LENGTH_SHORT).show()
         }
     }
-    private fun upadatemeal(userId:Int,Date:String,Breakfast:String,lunch:String,dinner:String){
-        val success = dbHelper.updateMeal(userId, Date, Breakfast, lunch, dinner)
+
+    private fun updateMeal(userId: Int, date: String, breakfast: String, lunch: String, dinner: String) {
+        val success = dbHelper.updateMeal(userId, date, breakfast, lunch, dinner)
         if (success) {
             Toast.makeText(context, "Meal updated successfully", Toast.LENGTH_SHORT).show()
         } else {
