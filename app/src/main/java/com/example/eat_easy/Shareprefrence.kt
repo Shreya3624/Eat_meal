@@ -41,5 +41,13 @@ class Shareprefrence (context: Context){
     fun getid (): Int?{
         return   sharedPreferences.getInt("userid",1)
     }
+    fun saveLastSelectedDate (date : String){
+        val edit=sharedPreferences.edit()
+        edit.putString("Date",date)
+        edit.apply()
+    }
+    fun getLastSelectedDate(): String? {
+        return sharedPreferences.getString("Date","")
+    }
 
 }

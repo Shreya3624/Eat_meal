@@ -1,10 +1,12 @@
 package com.example.eat_easy
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.os.Bundle
 
 class DataBase(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object {
@@ -143,10 +145,12 @@ private const val COLUMN_G_CREATED_AT = "created_at"
         }
         return result
     }
-    fun getallgrocery(userId:Int):Cursor{
-        val db=this.readableDatabase
-        val result=db.rawQuery("SELECT * FROM $TABLE_GROCERY_LIST WHERE $COLUMN_USER_ID=?", arrayOf(userId.toString()))
-        return result
+    fun getallgrocery(userId: Int): Cursor {
+        val db = this.readableDatabase
+        return db.rawQuery(
+            "SELECT * FROM $TABLE_GROCERY_LIST WHERE $COLUMN_USER_ID=?",
+            arrayOf(userId.toString())
+        )
     }
     // Meal Plan Operations
     fun addMeal(userId: Int, mealDate: String, breakfast: String, lunch: String, dinner: String): Boolean {
@@ -163,8 +167,52 @@ private const val COLUMN_G_CREATED_AT = "created_at"
         return result != -1L
     }
 
-    fun getMealsByDate(userId: Int, mealDate: String): Cursor {
+    @SuppressLint("Range")
+    internal fun getMealPlan(userId: Int, date: String): Bundle? {
         val db = this.readableDatabase
-        return db.rawQuery("SELECT * FROM $TABLE_MEALS WHERE $COLUMN_USER_ID=? AND $COLUMN_MEAL_DATE=?", arrayOf(userId.toString(), mealDate))
+        val query = """
+        SELECT $COLUMN_BREAKFAST, $COLUMN_LUNCH, $COLUMN_DINNER 
+        FROM $TABLE_MEALS 
+        WHERE user_id = ? AND $COLUMN_MEAL_DATE = ?
+    """
+        val cursor = db.rawQuery(query, arrayOf(userId.toString(), date))
+
+        if (cursor.moveToFirst()) {
+            val mealPlan = Bundle()
+            mealPlan.putString("breakfast",cursor.getString(cursor.getColumnIndex(COLUMN_BREAKFAST)))
+            mealPlan.putString("lunch",cursor.getString(cursor.getColumnIndex(COLUMN_LUNCH)))
+            mealPlan.putString("dinner",cursor.getString(cursor.getColumnIndex(COLUMN_DINNER)))
+
+            cursor.close()
+            return mealPlan
+        }
+
+        cursor.close()
+        return null
     }
+    fun deleteMeal(userId: Int, date: String): Int {
+        val db=this.writableDatabase
+        val result=db.delete(TABLE_MEALS, "$COLUMN_USER_ID=? AND $COLUMN_MEAL_DATE=?", arrayOf(userId.toString(), date))
+        if (result>0) {
+            db.execSQL("DELETE FROM sqlite_sequence WHERE name = '$TABLE_GROCERY_LIST'")
+        }
+        return result
+    }
+    fun updateMeal(userId: Int, date: String, breakfast: String, lunch: String, dinner: String): Boolean {
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_BREAKFAST, breakfast)
+            put(COLUMN_LUNCH, lunch)
+            put(COLUMN_DINNER, dinner)
+        }
+        val selection = "$COLUMN_USER_ID = ? AND $COLUMN_MEAL_DATE = ?"
+        val selectionArgs = arrayOf(userId.toString(), date)
+        val rowsAffected = db.update(TABLE_MEALS, values, selection, selectionArgs)
+        return rowsAffected > 0
+    }
+
 }
+
+
+
+
