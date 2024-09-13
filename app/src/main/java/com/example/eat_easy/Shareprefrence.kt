@@ -49,5 +49,20 @@ class Shareprefrence (context: Context){
     fun getLastSelectedDate(): String? {
         return sharedPreferences.getString("Date","")
     }
+    fun setbmi(bmi:Int){
+        val edit = sharedPreferences.edit()
+        edit.putInt("bmi",bmi)
+        edit.apply()
+    }
+    fun getbmi():Int{
+        return sharedPreferences.getInt("bmi", 1)
+    }
+    fun logout() {
+        val edit = sharedPreferences.edit()
+        edit.remove("Date")  // Clears the last selected date on logout
+        edit.apply()
+
+        // Add any other logout actions, like returning to the login screen
+    }
 
 }

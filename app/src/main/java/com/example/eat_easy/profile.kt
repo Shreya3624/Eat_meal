@@ -42,6 +42,7 @@ class profile : Fragment() {
         }
         btn_logOut.setOnClickListener {
             shared.setlogin(false)
+         //   shared.logout()
             val intent = Intent(requireContext(), login::class.java)
             startActivity(intent)
             requireActivity().finish()

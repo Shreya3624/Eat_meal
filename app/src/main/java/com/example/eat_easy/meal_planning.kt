@@ -18,6 +18,9 @@ class meal_planning : Fragment() {
     private lateinit var dbHelper: DataBase
     private lateinit var shared: Shareprefrence
     private lateinit var editButton: Button
+    private lateinit var morning:Spinner
+    private lateinit var lunch:Spinner
+    private lateinit var dinner:Spinner
 
     private var selectedDate: String = ""
 
@@ -54,7 +57,7 @@ class meal_planning : Fragment() {
 
         // Set up the date picker dialog for selecting meal date
         mealDate.setOnClickListener {
-            showDatePickerDialog()
+                showDatePickerDialog()
         }
 
         return view
@@ -63,33 +66,37 @@ class meal_planning : Fragment() {
     @SuppressLint("MissingInflatedId")
     private fun mealDesign(): Boolean {
         val mealDesign: View = LayoutInflater.from(requireContext()).inflate(R.layout.meal_design, layoutContainer, false)
-
         val delete: Button = mealDesign.findViewById(R.id.delete)
         val morning: Spinner = mealDesign.findViewById(R.id.Breakfast_spi)
         val lunch: Spinner = mealDesign.findViewById(R.id.launch_spi)
         val dinner: Spinner = mealDesign.findViewById(R.id.dinner_spi)
+        val bmitxt:TextView=mealDesign.findViewById(R.id.bmitxt)
         saveMealButton = mealDesign.findViewById(R.id.save)
         editButton = mealDesign.findViewById(R.id.Edit)
         editButton.visibility = View.INVISIBLE
+        val bmi=shared.getbmi()
+        if (bmi!=null) {
+            bmitxt.text = bmifunction(bmi)
+        }
+       val meals= getMealsBasedOnBMI(bmi)
+        val breakfastItems = meals["breakfast"] ?: listOf()
+        val lunchItems = meals["lunch"] ?: listOf()
+        val dinnerItems = meals["dinner"] ?: listOf()
 
-        // Populate the breakfast, lunch, and dinner spinners with meals
-        val Mitems = listOf("Masala Oats", "Avocado Toast", "Veggie Omelette", "Bread-Butter")
-        val Litems = listOf("Mixed Veg Sabji", "Tadka Dal", "Vegetable Pulao", "Kadhi with Brown Rice")
-        val Ditems = listOf("Masoor Dal", "Moong Dal Chilla", "Rajma Chawal", "Vegetable Idli with Sambar")
+        // Update the spinners with the new meal lists
+        val breakfastAdapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, breakfastItems)
+        val lunchAdapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, lunchItems)
+        val dinnerAdapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, dinnerItems)
 
-        val Madapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, Mitems)
-        morning.adapter = Madapter
-
-        val Ladapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, Litems)
-        lunch.adapter = Ladapter
-
-        val Dadapter = ArrayAdapter(requireContext(), R.layout.custom_spinner_item, Ditems)
-        dinner.adapter = Dadapter
-
+        // Assuming morning, lunch, and dinner are the Spinner views in your layout
+        morning.adapter = breakfastAdapter
+        lunch.adapter = lunchAdapter
+        dinner.adapter = dinnerAdapter
         // Handle delete button click
         delete.setOnClickListener {
             addLayout.visibility = View.VISIBLE
             layoutContainer.removeView(mealDesign)
+
             deleteMeals()
         }
 
@@ -224,6 +231,38 @@ class meal_planning : Fragment() {
             Toast.makeText(context, "Meal updated successfully", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(context, "Failed to update meal", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun getMealsBasedOnBMI(bmi:Int): Map<String, List<String>> {
+        if (bmi != null) {
+            return when {
+                bmi < 18 -> mapOf(
+                    "breakfast" to listOf("High-Calorie Oats", "Avocado Toast", "Full-Fat Yogurt", "Nut Butter Toast"),
+                    "lunch" to listOf("Paneer Curry", "High-Calorie Veg Sabji", "Veg Pulao with Butter", "Dal Makhani"),
+                    "dinner" to listOf("Full-Fat Dal", "Butter Chicken (Veg)", "Heavy Rajma Chawal", "Dosa with Coconut Chutney")
+                )
+                bmi in 18..24 -> mapOf(
+                    "breakfast" to listOf("Masala Oats", "Veggie Omelette", "Wholegrain Toast", "Fruit Smoothie"),
+                    "lunch" to listOf("Mixed Veg Sabji", "Tadka Dal", "Vegetable Pulao", "Kadhi with Brown Rice"),
+                    "dinner" to listOf("Masoor Dal", "Moong Dal Chilla", "Rajma Chawal", "Vegetable Idli with Sambar")
+                )
+                else -> mapOf(
+                    "breakfast" to listOf("Low-Calorie Smoothie", "Fruit Salad", "Low-Calorie Oats", "Boiled Eggs"),
+                    "lunch" to listOf("Grilled Veg Salad", "Sprouts Salad", "Brown Rice Pulao", "Light Tofu Curry"),
+                    "dinner" to listOf("Light Dal Soup", "Moong Soup", "Salad with Rajma", "Steamed Veggies with Idli")
+                )
+            }
+        }
+        return mapOf(
+            "clear" to listOf("nothing")
+        )
+    }
+    private fun bmifunction(bmi: Int):String{
+        return when {
+            bmi < 18 -> "BMI Category:Underweight :$bmi"
+            bmi in 18..24-> "BMI Category:Normal weight :$bmi"
+            bmi in 25..29 -> "BMI Category:Overweight :$bmi"
+            else -> "Obesity$bmi"
         }
     }
 }

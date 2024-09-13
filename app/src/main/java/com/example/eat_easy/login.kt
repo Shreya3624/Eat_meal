@@ -1,11 +1,10 @@
 package com.example.eat_easy
 
 import android.content.Intent
-import android.content.SharedPreferences
+import android.database.Cursor
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -42,6 +41,7 @@ class login : AppCompatActivity() {
                 if (isValidUser(email, password)) {
                     // Successful login
                     shared.storeEmail(email)
+                    findId(email)
                     Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
                     shared.setlogin(true)
 
@@ -88,5 +88,15 @@ class login : AppCompatActivity() {
         val isValid = cursor != null && cursor.count > 0
         cursor?.close()
         return isValid
+    }
+    private fun findId(email: String){
+            val cursor: Cursor? = dbHelper.getUserByEmail(email)
+            if (cursor != null && cursor.moveToFirst()) {
+                val id = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
+                val BMI = cursor.getInt(cursor.getColumnIndexOrThrow("bmi"))
+                shared.setid(id)
+                shared.setbmi(BMI)
+            }
+
     }
 }
