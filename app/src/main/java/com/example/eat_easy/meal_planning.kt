@@ -2,13 +2,17 @@ package com.example.eat_easy
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
+import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 class meal_planning : Fragment() {
     private lateinit var mealDate: TextView
@@ -43,6 +47,9 @@ class meal_planning : Fragment() {
         // Fetch last selected date from SharedPreferences
         selectedDate = shared.getLastSelectedDate() ?: ""
 
+        // Check if 24 hours have passed and clear/reset meal data if necessary
+        clearDataIf24HoursPassed()
+
         // If there's a saved meal plan for the date, populate the layout
         if (selectedDate.isNotEmpty()) {
             mealDate.text = selectedDate
@@ -58,6 +65,14 @@ class meal_planning : Fragment() {
         // Set up the date picker dialog for selecting meal date
         mealDate.setOnClickListener {
                 showDatePickerDialog()
+            val systemDate=System.currentTimeMillis()
+            val dateFormat=SimpleDateFormat("dd//mm/yyyy",Locale.getDefault())
+            val currentDate=dateFormat.format(Date(systemDate))
+            if (currentDate!=selectedDate){
+                layoutContainer.removeAllViews()
+                addLayout.visibility=View.VISIBLE
+            }
+
         }
 
         return view
@@ -264,5 +279,31 @@ class meal_planning : Fragment() {
             bmi in 25..29 -> "BMI Category:Overweight :$bmi"
             else -> "Obesity$bmi"
         }
+    }
+    private fun clearDataIf24HoursPassed() {
+        val sharedPreferences = requireContext().getSharedPreferences("MealPlannerPrefs", android.content.Context.MODE_PRIVATE)
+        val lastAccessDate = sharedPreferences.getLong("lastAccessDate", 0L)
+        val currentDate = System.currentTimeMillis()
+
+        // Check if 24 hours (86400000 milliseconds) have passed
+        if (currentDate - lastAccessDate >= 86400000) {
+            // Clear meal data and reset date
+            clearMealData()
+
+            // Update the last access date in SharedPreferences
+            val editor = sharedPreferences.edit()
+            editor.putLong("lastAccessDate", currentDate)
+            editor.apply()
+        }
+    }
+
+    private fun clearMealData() {
+        // Clear meal data from UI or database
+        layoutContainer.removeAllViews() // Clear all the dynamically added views
+
+        addLayout.visibility = View.VISIBLE // Re-enable the add button
+        mealDate.text = "" // Clear the date
+        shared.saveLastSelectedDate("") // Clear the saved date in SharedPreferences
+
     }
 }

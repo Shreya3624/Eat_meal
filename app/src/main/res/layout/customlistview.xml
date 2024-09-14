@@ -21,16 +21,15 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <Button
+    <TextView
         android:id="@+id/buttonDelete"
-        android:layout_width="wrap_content"
+        android:layout_width="28dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_shape"
-        android:text="𝐃𝐞𝐥𝐞𝐭𝐞"
-        android:textColor="@color/white"
-        android:textSize="20dp"
+        android:text="X"
+        android:textColor="@color/black"
+        android:textSize="25dp"
         android:textStyle="bold" />
 
-    </LinearLayout>
+</LinearLayout>
 
 

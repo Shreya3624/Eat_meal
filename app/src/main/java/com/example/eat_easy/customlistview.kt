@@ -19,7 +19,7 @@ class customlistview(context: Context, private val items: ArrayList<String>,priv
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.customlistview  , parent, false)
         val checkBox = view.findViewById<CheckBox>(R.id.checkBox)
         val textViewItemName = view.findViewById<TextView>(R.id.textViewItemName)
-        val buttonDelete = view.findViewById<Button>(R.id.buttonDelete)
+        val buttonDelete = view.findViewById<TextView>(R.id.buttonDelete)
 
         textViewItemName.text = items[position]
         dbHelper=DataBase(context)

@@ -190,11 +190,33 @@ private const val COLUMN_G_CREATED_AT = "created_at"
         cursor.close()
         return null
     }
-    fun deleteMeal(userId: Int, date: String): Int {
+//    fun deleteMeal(userId: Int, date: String): Int {
+//        val db = this.writableDatabase
+//
+//        // Delete the meal based on userId and date
+//        val result = db.delete(TABLE_MEALS, "$COLUMN_USER_ID=? AND $COLUMN_MEAL_DATE=?", arrayOf(userId.toString(), date))
+//
+//        if (result > 0) {
+//            // Check if the table is now empty after deletion
+//            val cursor = db.rawQuery("SELECT COUNT(*) FROM $TABLE_MEALS", null)
+//            if (cursor.moveToFirst()) {
+//                val count = cursor.getInt(0)
+//                if (count == 0) {
+//                    // Reset the auto-increment if the table is empty
+//                    db.execSQL("DELETE FROM sqlite_sequence WHERE name = '$TABLE_MEALS'")
+//                }
+//            }
+//            cursor.close()
+//        }
+//
+//        return result
+//    }
+
+        fun deleteMeal(userId: Int, date: String): Int {
         val db=this.writableDatabase
         val result=db.delete(TABLE_MEALS, "$COLUMN_USER_ID=? AND $COLUMN_MEAL_DATE=?", arrayOf(userId.toString(), date))
         if (result>0) {
-            db.execSQL("DELETE FROM sqlite_sequence WHERE name = '$TABLE_GROCERY_LIST'")
+            db.execSQL("DELETE FROM sqlite_sequence WHERE name = '$TABLE_MEALS'")
         }
         return result
     }
