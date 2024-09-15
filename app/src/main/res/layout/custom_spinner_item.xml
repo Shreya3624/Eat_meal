@@ -4,6 +4,7 @@
     android:background="#fcf3cf"
     android:textColor="@color/black"
     android:textStyle="bold"
+    android:fontFamily="@font/custom_boldfont"
     android:layout_height="match_parent">
 
 </TextView>

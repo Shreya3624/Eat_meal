@@ -11,9 +11,9 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="140dp"
-        android:src="@drawable/app_logo1">
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="20sp"
+        android:src="@drawable/app_logo_1">
     </ImageView>
 
     <androidx.cardview.widget.CardView
@@ -28,17 +28,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <TextView
+                android:layout_width="308dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/custom_boldfont"
+                android:gravity="center"
+                android:text="Cook Smart, Plan Ahead, Shop Easy – Your All-in-One Kitchen Companion!"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
         <TextView
             android:id="@+id/txt_uname"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_marginTop="100dp"
+            android:fontFamily="@font/custom_boldfont"
             android:drawableLeft="@drawable/baseline_person_24"
             android:drawablePadding="20dp"
             android:text="Aryan Rajput"
             android:padding="10dp"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.714"
@@ -50,8 +63,10 @@
             android:layout_below="@+id/txt_uname"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:drawableLeft="@drawable/baseline_person_24"
+            android:fontFamily="@font/custom_boldfont"
+            android:drawableLeft="@drawable/baseline_email_24"
             android:drawablePadding="20dp"
+            android:textColor="@color/black"
             android:text="Aryan Rajput"
             android:padding="10dp"
             android:textSize="20dp"
@@ -65,7 +80,9 @@
             android:layout_height="54dp"
             android:drawableLeft="@drawable/baseline_info_24"
             android:drawablePadding="20dp"
-            android:text="My BMI : Overweight"
+            android:textColor="@color/black"
+            android:fontFamily="@font/custom_boldfont"
+            android:text="Your BMI : Overweight"
             android:padding="10dp"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -79,6 +96,8 @@
             android:drawableLeft="@drawable/baseline_restaurant_menu_24"
             android:drawablePadding="20dp"
             android:padding="10dp"
+            android:fontFamily="@font/custom_boldfont"
+            android:textColor="@color/black"
             android:text="Nutritional Goals"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -92,24 +111,27 @@
             android:drawableLeft="@drawable/baseline_help_outline_24"
             android:drawablePadding="20dp"
             android:padding="10dp"
+            android:fontFamily="@font/custom_boldfont"
+            android:textColor="@color/black"
             android:text="Need Help ?"
             android:textSize="20dp"
             android:textStyle="bold"
              />
 
-        <Button
-            android:id="@+id/btn"
-            android:layout_width="182dp"
-            android:layout_height="68dp"
-            android:layout_below="@id/txt_help"
-            android:layout_marginStart="100dp"
-            android:background="@drawable/btn_shape"
-            android:backgroundTint="#fcf3cf "
-            android:text="𝐋𝐨𝐠 - 𝐨𝐮𝐭"
-            android:textColor="@color/black"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            />
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="250dp"
+                android:layout_height="65dp"
+                android:layout_below="@id/txt_help"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/btn_shape"
+                android:backgroundTint="#fcf3cf "
+                android:fontFamily="@font/custom_boldfont"
+                android:text="𝐋𝐨𝐠 - 𝐨𝐮𝐭"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

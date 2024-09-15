@@ -30,12 +30,12 @@ class recipelist : AppCompatActivity() {
 
     private fun maxican() {
         items = listOf(
-            recipe_list_model(R.drawable.paneer_makhani ," aryan Masala ",""),
-            recipe_list_model(R.drawable.chole, "shreya",""),
-            recipe_list_model(R.drawable.bhindi_masala, "ankoit Bhindi",""),
-            recipe_list_model(R.drawable.biryani, "manoj. Biryani",""),
-            recipe_list_model(R.drawable.aaloo_sabji, "Jeera Aloo",""),
-            recipe_list_model(R.drawable.dal, "Dal vishal",""),
+            recipe_list_model(R.drawable.humberger ," Humburger ",resources.getString(R.string.a1)),
+            recipe_list_model(R.drawable.apple_pie, "Apple Pie",resources.getString(R.string.a2)),
+            recipe_list_model(R.drawable.pancake, "Pancake",resources.getString(R.string.a4)),
+            recipe_list_model(R.drawable.cornbread, "Corn Bread",resources.getString(R.string.a3)),
+            recipe_list_model(R.drawable.hotdog, "Hotdog",resources.getString(R.string.a5)),
+            recipe_list_model(R.drawable.macaroni, "Macroni and Cheese",resources.getString(R.string.a6)),
         )
 
 

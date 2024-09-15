@@ -138,7 +138,7 @@
                         android:layout_marginRight="10dp"
                         android:padding="10dp"
                         android:textColor="@color/black"
-                        android:text="𝐌𝐞𝐱𝐢𝐜𝐚𝐧 𝐂𝐮𝐢𝐬𝐢𝐧𝐞"
+                        android:text="𝐀𝐦𝐞𝐫𝐢𝐜𝐚𝐧 𝐂𝐮𝐢𝐬𝐢𝐧𝐞"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 

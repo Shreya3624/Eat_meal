@@ -17,6 +17,7 @@
         android:layout_height="34dp"
         android:layout_weight="1"
         android:text="Item Name"
+        android:fontFamily="@font/custom_boldfont"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -27,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="X"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
 </LinearLayout>

@@ -197,7 +197,7 @@ class meal_planning : Fragment() {
 
     private fun saveMeal(): Boolean {
         if (selectedDate.isEmpty()) {
-            Toast.makeText(requireContext(), "Please select a date.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Please select a date !", Toast.LENGTH_SHORT).show()
             return false
         }
 
@@ -220,10 +220,10 @@ class meal_planning : Fragment() {
 
             // Save the meal to the database
             if (success) {
-                Toast.makeText(requireContext(), "Meal plan saved successfully!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Meal plan saved successfully !", Toast.LENGTH_SHORT).show()
                 return true
             } else {
-                Toast.makeText(requireContext(), "Failed to save meal plan.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Failed to save meal plan ", Toast.LENGTH_SHORT).show()
                 return false
             }
         }
@@ -274,10 +274,10 @@ class meal_planning : Fragment() {
     }
     private fun bmifunction(bmi: Int):String{
         return when {
-            bmi < 18 -> "BMI Category:Underweight :$bmi"
-            bmi in 18..24-> "BMI Category:Normal weight :$bmi"
-            bmi in 25..29 -> "BMI Category:Overweight :$bmi"
-            else -> "Obesity$bmi"
+            bmi < 18 -> "Your BMI Category is Underweight : $bmi"
+            bmi in 18..24-> "Your BMI Category is Normal weight : $bmi"
+            bmi in 25..29 -> "Your BMI Category is Overweight : $bmi"
+            else -> "Obesity $bmi"
         }
     }
     private fun clearDataIf24HoursPassed() {

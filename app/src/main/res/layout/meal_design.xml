@@ -27,9 +27,12 @@
 
             <TextView
                 android:id="@+id/bmitxt"
-                android:layout_width="296dp"
-                android:layout_height="32dp"
+                android:layout_width="317dp"
+                android:layout_height="49dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/custom_boldfont"
                 android:gravity="center"
                 android:text=""
                 android:textColor="@color/black"
@@ -40,6 +43,8 @@
                 android:layout_width="308dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/custom_boldfont"
                 android:gravity="center"
                 android:text="𝐏𝐥𝐚𝐧 𝐘𝐨𝐮𝐫 𝐓𝐨𝐝𝐚𝐲'𝐬 𝐌𝐞𝐚𝐥 𝐖𝐢𝐭𝐡 𝐔𝐒 !"
                 android:textColor="@color/black"
@@ -52,12 +57,14 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="25dp"
+                android:fontFamily="@font/custom_boldfont"
                 android:layout_marginTop="10dp"
                 android:text="𝐁𝐫𝐞𝐚𝐤𝐟𝐚𝐬𝐭"/>
 
             <Spinner
                 android:layout_width="260dp"
                 android:layout_height="48dp"
+                android:fontFamily="@font/custom_boldfont"
                 android:id="@+id/Breakfast_spi"/>
             <TextView
                 android:layout_width="263dp"
@@ -66,12 +73,14 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="25dp"
+                android:fontFamily="@font/custom_boldfont"
                 android:layout_marginTop="10dp"
                 android:text="𝐋𝐮𝐧𝐜𝐡"/>
 
             <Spinner
                 android:layout_width="260dp"
                 android:id="@+id/launch_spi"
+                android:fontFamily="@font/custom_boldfont"
                 android:layout_height="48dp" />
             <TextView
                 android:layout_width="263dp"
@@ -80,25 +89,28 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="25dp"
+                android:fontFamily="@font/custom_boldfont"
                 android:layout_marginTop="10dp"
                 android:text="𝐃𝐢𝐧𝐧𝐞𝐫"/>
 
             <Spinner
                 android:layout_width="260dp"
                 android:id="@+id/dinner_spi"
+                android:fontFamily="@font/custom_boldfont"
                 android:layout_height="48dp" />
 
             <Button
                 android:id="@+id/delete"
-                android:layout_width="108dp"
+                android:layout_width="126dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="-90dp"
                 android:layout_marginTop="60dp"
-                android:layout_marginLeft="-100dp"
                 android:background="@drawable/btn_shape"
-                android:textStyle="bold"
-                android:textSize="25dp"
+                android:fontFamily="@font/custom_boldfont"
                 android:text="𝐃𝐞𝐥𝐞𝐭𝐞"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/save"
@@ -106,6 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="-49dp"
+                android:fontFamily="@font/custom_boldfont"
                 android:background="@drawable/btn_shape"
                 android:text="𝐒𝐚𝐯𝐞"
                 android:textColor="@color/white"
@@ -118,7 +131,8 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="-49dp"
                 android:background="@drawable/btn_shape"
-                android:text="Edit"
+                android:text="𝐄𝐝𝐢𝐭"
+                android:fontFamily="@font/custom_boldfont"
                 android:textColor="@color/white"
                 android:textSize="25dp"
                 android:textStyle="bold" />

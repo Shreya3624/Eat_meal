@@ -14,7 +14,10 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/bg"
-        android:hint="Grocery List : you need to buy..."
+        android:fontFamily="@font/custom_boldfont"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:hint="What's in your grocery list?"
         android:padding="10dp"
         android:singleLine="true"
         tools:ignore="TouchTargetSizeCheck" />
@@ -41,6 +44,7 @@
         android:layout_marginEnd="10dp"
         android:background="@drawable/btn_shape"
         android:text="𝐀𝐝𝐝"
+        android:fontFamily="@font/custom_boldfont"
         android:textColor="@color/white"
         android:textSize="20dp" />
 
@@ -48,6 +52,7 @@
         android:id="@+id/listViewItems"
         android:layout_width="398dp"
         android:layout_height="802dp"
+        android:fontFamily="@font/custom_boldfont"
         android:layout_below="@id/editTextItem"
         android:layout_centerInParent="true"
         android:layout_marginStart="25dp"
