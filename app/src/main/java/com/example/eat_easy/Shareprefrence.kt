@@ -6,19 +6,12 @@ import android.content.SharedPreferences
 class Shareprefrence (context: Context){
 
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
-    fun setlogin(islogin : Boolean):Boolean{
-        val edit  = sharedPreferences.edit()
-        if(islogin){
+    fun setlogin(islogin : Boolean) {
+        val edit = sharedPreferences.edit()
 
-        edit.putBoolean("islogin",islogin)
+        edit.putBoolean("islogin", islogin)
         edit.apply()
-        return true
-        }
-        else
-        {
-            edit.clear()
-            return false
-        }
+
     }
    fun getLogin ():Boolean{
       return sharedPreferences.getBoolean("islogin",false)

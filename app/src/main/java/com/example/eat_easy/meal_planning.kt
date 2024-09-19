@@ -1,6 +1,7 @@
 package com.example.eat_easy
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
 import android.os.Bundle
@@ -109,11 +110,31 @@ class meal_planning : Fragment() {
         dinner.adapter = dinnerAdapter
         // Handle delete button click
         delete.setOnClickListener {
-            addLayout.visibility = View.VISIBLE
-            layoutContainer.removeView(mealDesign)
+            // Create an AlertDialog.Builder with the fragment's context
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("Delete Meal")
+            builder.setMessage("Are you sure you want to delete this meal?")
 
-            deleteMeals()
+            // Set up the buttons
+            builder.setPositiveButton("Yes") { dialog, which ->
+                // If the user confirms deletion
+                addLayout.visibility = View.VISIBLE
+                layoutContainer.removeView(mealDesign)
+                deleteMeals() // Call the function to delete the meal
+            }
+
+            builder.setNegativeButton("No") { dialog, which ->
+                // If the user cancels the deletion
+                dialog.dismiss() // Close the dialog
+            }
+
+            // Show the alert dialog
+            builder.show()
         }
+
+
+
+
 
         layoutContainer.addView(mealDesign)
 
@@ -126,7 +147,7 @@ class meal_planning : Fragment() {
         }
         editButton.setOnClickListener {
             // Show confirmation dialog
-            val dialogBuilder = android.app.AlertDialog.Builder(requireContext())
+            val dialogBuilder = AlertDialog.Builder(requireContext())
             dialogBuilder.setMessage("Do you want to update the meal plan?")
                 .setCancelable(false)
                 .setPositiveButton("Yes") { dialog, id ->
@@ -236,7 +257,7 @@ class meal_planning : Fragment() {
         if (rowsDeleted > 0) {
             Toast.makeText(requireContext(), "Meal deleted successfully", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(requireContext(), "No meal found to delete", Toast.LENGTH_SHORT).show()
+
         }
     }
 
@@ -277,7 +298,7 @@ class meal_planning : Fragment() {
             bmi < 18 -> "Your BMI Category is Underweight : $bmi"
             bmi in 18..24-> "Your BMI Category is Normal weight : $bmi"
             bmi in 25..29 -> "Your BMI Category is Overweight : $bmi"
-            else -> "Obesity $bmi"
+            else -> "Overweight $bmi"
         }
     }
     private fun clearDataIf24HoursPassed() {
@@ -300,7 +321,6 @@ class meal_planning : Fragment() {
     private fun clearMealData() {
         // Clear meal data from UI or database
         layoutContainer.removeAllViews() // Clear all the dynamically added views
-
         addLayout.visibility = View.VISIBLE // Re-enable the add button
         mealDate.text = "" // Clear the date
         shared.saveLastSelectedDate("") // Clear the saved date in SharedPreferences

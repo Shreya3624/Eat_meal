@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.eat_easy.DataBase.Companion.COLUMN_BMI
 import com.example.eat_easy.DataBase.Companion.COLUMN_USERNAME
 
@@ -25,7 +26,7 @@ class profile : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val view: View = inflater.inflate(R.layout.fragment_profile, container, false)
         USERNAME = view.findViewById(R.id.txt_uname)
         Email = view.findViewById(R.id.pr_email)
@@ -41,12 +42,30 @@ class profile : Fragment() {
             Toast.makeText(requireContext(), "No user data found", Toast.LENGTH_SHORT).show()
         }
         btn_logOut.setOnClickListener {
-            shared.setlogin(false)
-         //   shared.logout()
-            val intent = Intent(requireContext(), login::class.java)
-            startActivity(intent)
-            requireActivity().finish()
+            // Create an AlertDialog.Builder
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("Log Out")
+            builder.setMessage("Are you sure you want to log out?")
+
+            // Set up the buttons
+            builder.setPositiveButton("Yes") { dialog, which ->
+                // If the user confirms logging out
+                shared.logout()
+                shared.setlogin(false) // Log out the user (updating shared preferences)
+                val intent = Intent(requireContext(), login::class.java)
+                startActivity(intent)
+                requireActivity().finish() // Close the current activity
+            }
+
+            builder.setNegativeButton("No") { dialog, which ->
+                // If the user cancels the log out
+                dialog.dismiss() // Close the dialog
+            }
+
+            // Show the alert dialog
+            builder.show()
         }
+
         return view
 }
     private fun loadUserData(email: String) {

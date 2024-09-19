@@ -121,10 +121,11 @@ class sign_up : AppCompatActivity() {
     }
 
     private fun calculateBMI(weight: Int, height: Int): String {
-        val heightInMeters = height / 100.0
+        val heightInMeters = height / 100.0 // Convert height from cm to meters
         val bmi = weight / (heightInMeters * heightInMeters)
         return String.format("%.2f", bmi)
     }
+
     private fun isValidEmail(email: String): Boolean {
         val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$".toRegex()
         return email.matches(emailRegex)
